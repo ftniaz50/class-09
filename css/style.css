@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+h1{
+  text-align: center;
+}
+nav{
+  background-color: lightcoral;
+  width: 600px;
+  margin: auto;
+}
+nav ul{
+  text-align: center;
+}
+nav ul li{
+  display: inline-block;
+  position: relative;
+}
+nav ul li a{
+  color: bisque;
+  font-family: arial;
+  padding: 10px 20px; 
+  display: inline-block;
+  position: relative;
+  z-index: 12;
+}
+nav ul li a::before{
+  content:"";
+  width: 50%;
+  height: 0%;
+  background-color: rgb(179, 57, 41);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+nav ul li a::after{
+  content:"";
+  width: 50%;
+  height: 0%;
+  background-color: rgb(179, 57, 41);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+nav ul li:hover > a::before{
+  height: 100%;}
+nav ul li:hover > a::after{
+  height: 100%;}
+
+  /* sub menu start*/
+ nav ul li .sub{
+  position: absolute;
+  background-color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  width: 100px;
+ }
+ nav ul li:hover > .sub{
+  opacity: 1;
+  visibility: visible;
+ }
+  nav ul  li .sub li{
+    display: block;
+  }
+  nav ul  li .sub li a{
+    width: 100%;
+  }
+  nav ul li .sub .sub{
+   background-color: black;
+   left: 100%;
+   width: 90px;
+   top: 0;
+  }
+  
+  /* sub menu end */
